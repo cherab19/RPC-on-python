@@ -72,7 +72,9 @@ def main():
 
     # Start server
     print("\n[4/4] Starting TCP server...")
-    server = TCPServer(host="127.0.0.1", port=5000, max_connections=10)
+    # Allow overriding host via environment variable for container/IDE forwarding
+    host = os.environ.get("RPC_HOST", "127.0.0.1")
+    server = TCPServer(host=host, port=5000, max_connections=10)
     server.start(request_handler=skeleton.dispatch_request)
     print("✓ Server started on 127.0.0.1:5000")
 

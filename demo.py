@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 # Get the project root
-PROJECT_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = Path(__file__).parent
 
 
 def run_demo():
